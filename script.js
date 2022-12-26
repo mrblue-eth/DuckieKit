@@ -107,24 +107,33 @@ $(".number-input").keypress(function (e) {
 });
 
 $(".xmas1").click(function () {
-  $(".duckie-head-extra").css(
-    "background-image",
-    "url('layers/head/xmas-hat-1.png')"
-  );
+  if ($(".duckie-head-extra").css("background-image").includes("xmas-hat-1"))
+    $(".duckie-head-extra").css("background-image", "none");
+  else
+    $(".duckie-head-extra").css(
+      "background-image",
+      "url('layers/head/xmas-hat-1.png')"
+    );
 });
 
 $(".xmas2").click(function () {
-  $(".duckie-head-extra").css(
-    "background-image",
-    "url('layers/head/xmas-hat-2.png')"
-  );
+  if ($(".duckie-head-extra").css("background-image").includes("xmas-hat-2"))
+    $(".duckie-head-extra").css("background-image", "none");
+  else
+    $(".duckie-head-extra").css(
+      "background-image",
+      "url('layers/head/xmas-hat-2.png')"
+    );
 });
 
 $(".mcdonalds").click(function () {
-  $(".duckie-head-extra").css(
-    "background-image",
-    "url('layers/head/mcdonalds-hat.png')"
-  );
+  if ($(".duckie-head-extra").css("background-image").includes("mcdonalds-hat"))
+    $(".duckie-head-extra").css("background-image", "none");
+  else
+    $(".duckie-head-extra").css(
+      "background-image",
+      "url('layers/head/mcdonalds-hat.png')"
+    );
 });
 
 $(".btn-default-hat").click(function () {
