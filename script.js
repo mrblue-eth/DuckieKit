@@ -48,45 +48,45 @@ let showDuckie = function () {
   $.getJSON("duckies/duckie" + duckieID + ".json", function (json) {
     $(".btn").removeClass("disable");
 
-    let i = 1;
+    // let i = 1;
     let duckieType = json.traits.find((o) => o.trait_type === "Type").value;
 
     $.each(json.traits, function (key, trait) {
-      setTimeout(() => {
-        let traitType = trait.trait_type.toLowerCase();
-        let traitValue = trait.value.split(" ").join("-");
+      // setTimeout(() => {
+      let traitType = trait.trait_type.toLowerCase();
+      let traitValue = trait.value.split(" ").join("-");
 
+      $(".duckie-" + traitType).css(
+        "background-image",
+        "url('layers/" + traitType + "/" + traitValue + ".png')"
+      );
+
+      if (
+        traitValue.match(
+          /^(Pilot-Sunglasses|Reading-Glasses|Black-Eye|Third-Eye|Diving-Mask|Power-Level-Meter|Shower-Cap)$/
+        )
+      )
         $(".duckie-" + traitType).css(
           "background-image",
-          "url('layers/" + traitType + "/" + traitValue + ".png')"
+          "url('layers/" +
+            traitType +
+            "/" +
+            traitValue +
+            "-" +
+            duckieType +
+            ".png')"
         );
 
-        if (
-          traitValue.match(
-            /^(Pilot-Sunglasses|Reading-Glasses|Black-Eye|Third-Eye|Diving-Mask|Power-Level-Meter|Shower-Cap)$/
-          )
-        )
-          $(".duckie-" + traitType).css(
-            "background-image",
-            "url('layers/" +
-              traitType +
-              "/" +
-              traitValue +
-              "-" +
-              duckieType +
-              ".png')"
-          );
-
-        if (traitType === "head") {
-          $(".duckie-head").removeClass("hidden");
-          $(".btn-default-hat").removeClass("hidden");
-          $(".btn-default-hat img").attr(
-            "src",
-            "layers/head/" + traitValue + ".png"
-          );
-        }
-      }, i * 400);
-      i++;
+      if (traitType === "head") {
+        $(".duckie-head").removeClass("hidden");
+        $(".btn-default-hat").removeClass("hidden");
+        $(".btn-default-hat img").attr(
+          "src",
+          "layers/head/" + traitValue + ".png"
+        );
+      }
+      // }, i * 400);
+      // i++;
     });
 
     // setTimeout(() => {
