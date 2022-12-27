@@ -116,16 +116,6 @@ $(".xmas1").click(function () {
     );
 });
 
-$(".xmas2").click(function () {
-  if ($(".duckie-head-extra").css("background-image").includes("xmas-hat-2"))
-    $(".duckie-head-extra").css("background-image", "none");
-  else
-    $(".duckie-head-extra").css(
-      "background-image",
-      "url('layers/head/xmas-hat-2.png')"
-    );
-});
-
 $(".mcdonalds").click(function () {
   if ($(".duckie-head-extra").css("background-image").includes("mcdonalds-hat"))
     $(".duckie-head-extra").css("background-image", "none");
