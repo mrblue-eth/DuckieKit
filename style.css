@@ -20,15 +20,14 @@ body {
 /* LAYOUT */
 header {
   position: relative;
-  height: 15rem;
-  border-bottom: 0.5rem solid #eee;
+  height: 10rem;
 }
 
 main {
   color: #eee;
   display: flex;
-  flex-direction: column;
-  margin-top: 6.5rem;
+  justify-content: center;
+  margin: 1rem;
   gap: 2rem;
 }
 
@@ -49,27 +48,30 @@ footer p {
   margin-right: auto;
   background-color: #222;
 }
-
-.toolbar {
-  margin: 0 auto;
-}
-
-.result {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-}
-
-/* ELEMENTS STYLE */
 h1 {
   font-size: 3rem;
   text-align: center;
   position: absolute;
   width: 100%;
-  top: 30%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.flex {
+  display: flex;
+  gap: 1rem 1rem;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
 }
 
 .header-duckies {
@@ -95,94 +97,4 @@ h1 {
 .header-duckie img {
   width: 11rem;
   height: 11rem;
-}
-
-.number-input {
-  background: none;
-  border: 0.5rem solid #eee;
-  font-family: inherit;
-  color: inherit;
-  font-size: 2rem;
-  padding: 1rem;
-  width: 15rem;
-  height: 5rem;
-  text-align: center;
-  float: left;
-  margin-top: 1rem;
-}
-
-.btn {
-  border: none;
-  background-color: #eee;
-  color: #222;
-  font-size: 2rem;
-  font-family: inherit;
-  padding: 1rem;
-  cursor: pointer;
-  height: 5rem;
-  margin-left: 1rem;
-  margin-top: 1rem;
-  float: left;
-}
-
-.btn:hover {
-  background-color: #ccc;
-}
-.btn-icon {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-.xmas1 img {
-  padding-top: 1rem;
-  width: 6rem;
-  height: 6rem;
-}
-
-.mcdonalds img {
-  padding-top: 1rem;
-  width: 7rem;
-  height: 7rem;
-}
-
-.btn-default-hat img {
-  width: 5rem;
-  height: 5rem;
-}
-.disable {
-  cursor: not-allowed;
-  pointer-events: none;
-}
-.hidden {
-  display: none;
-}
-
-.duckie-background {
-  position: relative;
-  width: 480px;
-  height: 480px;
-  margin: 0 auto;
-  outline: 0.5rem solid #eee;
-  background-size: contain;
-  image-rendering: pixelated;
-}
-.duckie-layers {
-  width: 480px;
-  height: 480px;
-  background-size: contain;
-  image-rendering: pixelated;
-}
-.duckie-head-extra {
-  position: absolute;
-  top: 0;
-}
-
-@media screen and (max-width: 500px) {
-  .duckie-background {
-    width: 360px;
-    height: 360px;
-  }
-  .duckie-layers {
-    width: 360px;
-    height: 360px;
-  }
 }

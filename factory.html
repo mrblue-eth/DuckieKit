@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="factory.css" />
+    <title>Duckie Factory!</title>
+  </head>
+  <body>
+    <header>
+      <h1>Duckie Factory!</h1>
+    </header>
+    <main>
+      <section class="settings flex flex-col">
+        <div class="settings-title">
+          <h2>Background</h2>
+        </div>
+        <div id="background-btns" class="flex flex-wrap">
+          <button class="btn btn-icon bg-blue" title="Blue"></button>
+          <button class="btn btn-icon bg-purple" title="Purple"></button>
+          <button class="btn btn-icon bg-green" title="Green"></button>
+          <button class="btn btn-icon bg-brown" title="Brown"></button>
+          <button class="btn btn-icon bg-pink" title="Pink"></button>
+          <button class="btn btn-icon bg-orange" title="Orange"></button>
+        </div>
+
+        <div class="settings-title">
+          <h2>Type</h2>
+        </div>
+        <div id="type-btns" class="flex flex-wrap">
+          <button class="btn btn-icon type-yellow" title="Yellow">
+            <img src="layers/type/Yellow.png" />
+          </button>
+          <button class="btn btn-icon" title="Brown">
+            <img src="layers/type/Brown.png" />
+          </button>
+          <button class="btn btn-icon" title="Purple">
+            <img src="layers/type/Purple.png" />
+          </button>
+          <button class="btn btn-icon" title="Grey">
+            <img src="layers/type/Grey.png" />
+          </button>
+          <button class="btn btn-icon" title="White">
+            <img src="layers/type/White.png" />
+          </button>
+          <button class="btn btn-icon" title="Blue">
+            <img src="layers/type/Blue.png" />
+          </button>
+          <button class="btn btn-icon" title="Rainbow">
+            <img src="layers/type/Rainbow.png" />
+          </button>
+          <button class="btn btn-icon" title="Mallard">
+            <img src="layers/type/Mallard.png" />
+          </button>
+          <button class="btn btn-icon" title="Imposter">
+            <img src="layers/type/Imposter.png" />
+          </button>
+          <button class="btn btn-icon" title="Zombie">
+            <img src="layers/type/Zombie.png" />
+          </button>
+          <button class="btn btn-icon" title="Alien">
+            <img src="layers/type/Alien.png" />
+          </button>
+        </div>
+
+        <div class="settings-title accordion">
+          <h2>Face <span>+</span></h2>
+        </div>
+        <div id="face-btns" class="flex flex-wrap panel">
+          <button class="btn btn-icon" title="Mole">
+            <img src="layers/face/Mole.png" />
+          </button>
+          <button class="btn btn-icon" title="Tear">
+            <img src="layers/face/Tear.png" />
+          </button>
+        </div>
+
+        <div class="settings-title accordion">
+          <h2>Body <span>+</span></h2>
+        </div>
+        <div id="body-btns" class="flex flex-wrap panel">
+          <button class="btn btn-icon" title="Referee Shirt">
+            <img src="layers/body/Referee-Shirt.png" />
+          </button>
+          <button class="btn btn-icon" title="Black Suit">
+            <img src="layers/body/Black-Suit.png" />
+          </button>
+          <button class="btn btn-icon" title="White Suit">
+            <img src="layers/body/White-Suit.png" />
+          </button>
+          <button class="btn btn-icon" title="Black Suit Turtle Neck">
+            <img src="layers/body/Black-Suit-Turtle-Neck.png" />
+          </button>
+          <button class="btn btn-icon" title="Bathrobe">
+            <img src="layers/body/Bathrobe.png" />
+          </button>
+          <button class="btn btn-icon" title="Kimono">
+            <img src="layers/body/Kimono.png" />
+          </button>
+          <button class="btn btn-icon" title="Hi-Vis">
+            <img src="layers/body/Hi-Vis.png" />
+          </button>
+          <button class="btn btn-icon" title="Pilot Jacket">
+            <img src="layers/body/Pilot-Jacket.png" />
+          </button>
+          <button class="btn btn-icon" title="Knitted Sweater">
+            <img src="layers/body/Knitted-Sweater.png" />
+          </button>
+          <button class="btn btn-icon" title="Tuxedo">
+            <img src="layers/body/Tuxedo.png" />
+          </button>
+          <button class="btn btn-icon" title="Bow Tie">
+            <img src="layers/body/Bow-Tie.png" />
+          </button>
+          <button class="btn btn-icon" title="Scarf">
+            <img src="layers/body/Scarf.png" />
+          </button>
+          <button class="btn btn-icon" title="Dog Leash">
+            <img src="layers/body/Dog-Leash.png" />
+          </button>
+          <button class="btn btn-icon" title="Necklace">
+            <img src="layers/body/Necklace.png" />
+          </button>
+          <button class="btn btn-icon" title="Necklace Pink Diamond">
+            <img src="layers/body/Necklace-Pink-Diamond.png" />
+          </button>
+          <button class="btn btn-icon" title="Inflatable Tube">
+            <img src="layers/body/Inflatable-Tube.png" />
+          </button>
+        </div>
+
+        <div class="settings-title accordion">
+          <h2>Beak <span>+</span></h2>
+        </div>
+        <div id="beak-btns" class="flex flex-wrap panel">
+          <button class="btn btn-icon" title="Cigarette">
+            <img src="layers/beak/Cigarette.png" />
+          </button>
+          <button class="btn btn-icon" title="Joint">
+            <img src="layers/beak/Joint.png" />
+          </button>
+          <button class="btn btn-icon" title="Vape">
+            <img src="layers/beak/Vape.png" />
+          </button>
+          <button class="btn btn-icon" title="Mask">
+            <img src="layers/beak/Mask.png" />
+          </button>
+        </div>
+
+        <div class="settings-title accordion">
+          <h2>Eyes <span>+</span></h2>
+        </div>
+        <div id="eyes-btns" class="flex flex-wrap panel">
+          <button class="btn btn-icon" title="Purple Glasses">
+            <img src="layers/eyes/Purple-Glasses.png" />
+          </button>
+          <button class="btn btn-icon" title="Orange Glasses">
+            <img src="layers/eyes/Orange-Glasses.png" />
+          </button>
+          <button class="btn btn-icon" title="Blue Glasses">
+            <img src="layers/eyes/Blue-Glasses.png" />
+          </button>
+          <button class="btn btn-icon" title="Reading Glasses">
+            <img src="layers/eyes/Reading-Glasses-Yellow.png" />
+          </button>
+          <button class="btn btn-icon" title="Pilot Sunglasses">
+            <img src="layers/eyes/Pilot-Sunglasses-Yellow.png" />
+          </button>
+          <button class="btn btn-icon" title="3D Glasses">
+            <img src="layers/eyes/3D-Glasses.png" />
+          </button>
+          <button class="btn btn-icon" title="Monocle">
+            <img src="layers/eyes/Monocle.png" />
+          </button>
+          <button class="btn btn-icon" title="Diving Mask">
+            <img src="layers/eyes/Diving-Mask-Yellow.png" />
+          </button>
+          <button class="btn btn-icon" title="Power Level Meter">
+            <img src="layers/eyes/Power-Level-Meter-Yellow.png" />
+          </button>
+          <button class="btn btn-icon" title="Laser Eyes">
+            <img src="layers/eyes/Laser-Eyes.png" />
+          </button>
+          <button class="btn btn-icon" title="Robot Eyes">
+            <img src="layers/eyes/Robot-Eyes.png" />
+          </button>
+          <button class="btn btn-icon" title="Third Eye">
+            <img src="layers/eyes/Third-Eye-Yellow.png" />
+          </button>
+          <button class="btn btn-icon" title="Superhero Blue">
+            <img src="layers/eyes/Superhero-Blue.png" />
+          </button>
+          <button class="btn btn-icon" title="Superhero Green">
+            <img src="layers/eyes/Superhero-Green.png" />
+          </button>
+          <button class="btn btn-icon" title="Unibrow">
+            <img src="layers/eyes/Unibrow.png" />
+          </button>
+          <button class="btn btn-icon" title="Eyebrows">
+            <img src="layers/eyes/Eyebrows.png" />
+          </button>
+          <button class="btn btn-icon" title="Eye Patch">
+            <img src="layers/eyes/Eye-Patch.png" />
+          </button>
+          <button class="btn btn-icon" title="Blindfold">
+            <img src="layers/eyes/Blindfold.png" />
+          </button>
+          <button class="btn btn-icon" title="Black Eye">
+            <img src="layers/eyes/Black-Eye-Yellow.png" />
+          </button>
+          <button class="btn btn-icon" title="Wink">
+            <img src="layers/eyes/Wink.png" />
+          </button>
+          <button class="btn btn-icon" title="Closed Eyes">
+            <img src="layers/eyes/Closed-Eyes.png" />
+          </button>
+        </div>
+
+        <div class="settings-title accordion">
+          <h2>Head <span>+</span></h2>
+        </div>
+        <div id="head-btns" class="flex flex-wrap panel">
+          <button class="btn btn-icon" title="Black Hat">
+            <img src="layers/head/Black-Hat.png" />
+          </button>
+          <button class="btn btn-icon" title="Brown Hat">
+            <img src="layers/head/Brown-Hat.png" />
+          </button>
+          <button class="btn btn-icon" title="Bowler Hat">
+            <img src="layers/head/Bowler-Hat.png" />
+          </button>
+          <button class="btn btn-icon" title="Amish Hat">
+            <img src="layers/head/Amish-Hat.png" />
+          </button>
+          <button class="btn btn-icon" title="Cowboy Hat">
+            <img src="layers/head/Cowboy-Hat.png" />
+          </button>
+          <button class="btn btn-icon" title="Bucket Hat">
+            <img src="layers/head/Bucket-Hat.png" />
+          </button>
+          <button class="btn btn-icon" title="French Beret">
+            <img src="layers/head/French-Beret.png" />
+          </button>
+          <button class="btn btn-icon" title="Fedora">
+            <img src="layers/head/Fedora.png" />
+          </button>
+          <button class="btn btn-icon" title="Cap">
+            <img src="layers/head/Cap.png" />
+          </button>
+          <button class="btn btn-icon" title="Cap Forwards">
+            <img src="layers/head/Cap-Forwards.png" />
+          </button>
+          <button class="btn btn-icon" title="Cap Backwards">
+            <img src="layers/head/Cap-Backwards.png" />
+          </button>
+          <button class="btn btn-icon" title="Helicopter Cap">
+            <img src="layers/head/Helicopter-Cap.png" />
+          </button>
+          <button class="btn btn-icon" title="Police Cap">
+            <img src="layers/head/Police-Cap.png" />
+          </button>
+          <button class="btn btn-icon" title="Napoleon Hat">
+            <img src="layers/head/Napoleon-Hat.png" />
+          </button>
+          <button class="btn btn-icon" title="Oriental Hat">
+            <img src="layers/head/Oriental-Hat.png" />
+          </button>
+          <button class="btn btn-icon" title="Straw Hat">
+            <img src="layers/head/Straw-Hat.png" />
+          </button>
+          <button class="btn btn-icon" title="Party Hat">
+            <img src="layers/head/Party-Hat.png" />
+          </button>
+          <button class="btn btn-icon" title="Beanie">
+            <img src="layers/head/Beanie.png" />
+          </button>
+          <button class="btn btn-icon" title="Orange Beanie">
+            <img src="layers/head/Orange-Beanie.png" />
+          </button>
+          <button class="btn btn-icon" title="Big Red Beanie">
+            <img src="layers/head/Big-Red-Beanie.png" />
+          </button>
+          <button class="btn btn-icon" title="Crown">
+            <img src="layers/head/Crown.png" />
+          </button>
+          <button class="btn btn-icon" title="Helmet">
+            <img src="layers/head/Helmet.png" />
+          </button>
+          <button class="btn btn-icon" title="Ice Hockey Helmet">
+            <img src="layers/head/Ice-Hockey-Helmet.png" />
+          </button>
+          <button class="btn btn-icon" title="Military Helmet">
+            <img src="layers/head/Military-Helmet.png" />
+          </button>
+          <button class="btn btn-icon" title="Beekeeper">
+            <img src="layers/head/Beekeeper.png" />
+          </button>
+          <button class="btn btn-icon" title="Shower Cap">
+            <img src="layers/head/Shower-Cap-Yellow.png" />
+          </button>
+          <button class="btn btn-icon" title="Turban">
+            <img src="layers/head/Turban.png" />
+          </button>
+          <button class="btn btn-icon" title="Bandana">
+            <img src="layers/head/Bandana.png" />
+          </button>
+          <button class="btn btn-icon" title="Pirate Bandana">
+            <img src="layers/head/Pirate-Bandana.png" />
+          </button>
+          <button class="btn btn-icon" title="Dorag">
+            <img src="layers/head/Dorag.png" />
+          </button>
+          <button class="btn btn-icon" title="Hair Net">
+            <img src="layers/head/Hair-Net.png" />
+          </button>
+          <button class="btn btn-icon" title="Headband">
+            <img src="layers/head/Headband.png" />
+          </button>
+          <button class="btn btn-icon" title="Feather Headband">
+            <img src="layers/head/Feather-Headband.png" />
+          </button>
+          <button class="btn btn-icon" title="Bandage">
+            <img src="layers/head/Bandage.png" />
+          </button>
+          <button class="btn btn-icon" title="Tiara">
+            <img src="layers/head/Tiara.png" />
+          </button>
+          <button class="btn btn-icon" title="Hair">
+            <img src="layers/head/Hair.png" />
+          </button>
+          <button class="btn btn-icon" title="Stringy Hair">
+            <img src="layers/head/Stringy-Hair.png" />
+          </button>
+          <button class="btn btn-icon" title="Crazy Hair">
+            <img src="layers/head/Crazy-Hair.png" />
+          </button>
+          <button class="btn btn-icon" title="Clown Hair">
+            <img src="layers/head/Clown-Hair.png" />
+          </button>
+          <button class="btn btn-icon" title="Fro">
+            <img src="layers/head/Fro.png" />
+          </button>
+          <button class="btn btn-icon" title="The Elvis">
+            <img src="layers/head/The-Elvis.png" />
+          </button>
+          <button class="btn btn-icon" title="Black Mohawk">
+            <img src="layers/head/Black-Mohawk.png" />
+          </button>
+          <button class="btn btn-icon" title="Mohawk">
+            <img src="layers/head/Mohawk.png" />
+          </button>
+          <button class="btn btn-icon" title="Burning Head">
+            <img src="layers/head/Burning-Head.png" />
+          </button>
+          <button class="btn btn-icon" title="Falling in Love">
+            <img src="layers/head/Falling-in-Love.png" />
+          </button>
+          <button class="btn btn-icon" title="Antenna">
+            <img src="layers/head/Antenna.png" />
+          </button>
+          <button class="btn btn-icon" title="Green Glasses Forehead">
+            <img src="layers/head/Green-Glasses-Forehead.png" />
+          </button>
+          <button class="btn btn-icon" title="Mirror Glasses Forehead">
+            <img src="layers/head/Mirror-Glasses-Forehead.png" />
+          </button>
+          <button class="btn btn-icon" title="Mask">
+            <img src="layers/head/Mask.png" />
+          </button>
+          <button class="btn btn-icon" title="Skeleton Mask">
+            <img src="layers/head/Skeleton-Mask.png" />
+          </button>
+          <button class="btn btn-icon" title="Pepe Mask">
+            <img src="layers/head/Pepe-Mask.png" />
+          </button>
+          <button class="btn btn-icon" title="Ape Mask">
+            <img src="layers/head/Ape-Mask.png" />
+          </button>
+          <button class="btn btn-icon" title="Raincoat">
+            <img src="layers/head/Raincoat.png" />
+          </button>
+          <button class="btn btn-icon" title="Space Suit">
+            <img src="layers/head/Space-Suit.png" />
+          </button>
+        </div>
+      </section>
+      <section class="result flex">
+        <div id="duckie-image" class="duckie-background">
+          <div class="duckie-layers duckie-type">
+            <div class="duckie-layers duckie-face">
+              <div class="duckie-layers duckie-body">
+                <div class="duckie-layers duckie-beak">
+                  <div class="duckie-layers duckie-eyes">
+                    <div class="duckie-layers duckie-head"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <button class="btn download hidden">Download!</button> -->
+      </section>
+    </main>
+    <footer><p>Designed by mrblue.eth</p></footer>
+    <script src="jquery.min.js"></script>
+    <!-- <script src="html2canvas.min.js"></script> -->
+    <script src="factory.js"></script>
+  </body>
+</html>

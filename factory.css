@@ -1,0 +1,136 @@
+.settings {
+  width: 70rem;
+}
+
+.settings-title {
+  text-align: center;
+  border-bottom: 0.5rem solid #eee;
+  margin-bottom: 1rem;
+}
+
+.settings-title h2 {
+  width: fit-content;
+  font-size: 1.25rem;
+  padding: 1rem;
+  margin-bottom: -1.75rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #222;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  color: #222;
+  font-size: 2rem;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+  width: 5.25rem;
+  height: 5.25rem;
+  border: transparent 0.25rem solid;
+  opacity: 75%;
+}
+.btn.selected {
+  border-color: #f7d60d;
+  opacity: 100%;
+}
+.btn:hover {
+  opacity: 100%;
+}
+
+.btn img {
+  width: 4.75rem;
+  height: 4.75rem;
+}
+
+.bg-blue {
+  background-color: #6e7c96;
+}
+.bg-purple {
+  background-color: #908aa0;
+}
+.bg-green {
+  background-color: #6d9590;
+}
+.bg-brown {
+  background-color: #8d756b;
+}
+.bg-pink {
+  background-color: #dd949c;
+}
+.bg-orange {
+  background-color: #ca7d4e;
+}
+
+.disable {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.hidden {
+  display: none;
+}
+.accordion {
+  cursor: pointer;
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease-out;
+}
+
+.duckie-background {
+  position: relative;
+  width: 480px;
+  height: 480px;
+  margin: 2rem auto;
+  outline: 0.5rem solid #eee;
+  background-size: contain;
+  image-rendering: pixelated;
+}
+.duckie-layers {
+  width: 480px;
+  height: 480px;
+  background-size: contain;
+  image-rendering: pixelated;
+}
+
+@media screen and (max-width: 880px) {
+  .duckie-background {
+    width: 360px;
+    height: 360px;
+  }
+  .duckie-layers {
+    width: 360px;
+    height: 360px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .settings {
+    max-width: 100%;
+  }
+  main {
+    flex-direction: column;
+  }
+  .duckie-background {
+    width: 480px;
+    height: 480px;
+  }
+  .duckie-layers {
+    width: 480px;
+    height: 480px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .duckie-background {
+    width: 360px;
+    height: 360px;
+  }
+  .duckie-layers {
+    width: 360px;
+    height: 360px;
+  }
+}
