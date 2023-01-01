@@ -10,8 +10,11 @@ let resetDuckie = function () {
     .children(".btn-icon")
     .not(".bg-blue")
     .removeClass("selected");
+
   $("#background-btns").children(".bg-blue").addClass("selected");
+
   $(".duckie-background").css("background-image", defaultDuck.background);
+
   $(".duckie-layers").each(function (index, element) {
     $(element).css("background-image", "");
   });
@@ -20,7 +23,9 @@ let resetDuckie = function () {
     .children(".btn-icon")
     .not(".type-yellow")
     .removeClass("selected");
+
   $("#type-btns").children(".type-yellow").addClass("selected");
+
   $(".duckie-type").css("background-image", defaultDuck.type);
 };
 
@@ -28,8 +33,8 @@ resetDuckie();
 
 let typeChange = function () {
   let duckieType = $("#type-btns").children(".selected").attr("title");
-
   let eyesTraitTitle = $("#eyes-btns").children(".selected").attr("title");
+
   if (eyesTraitTitle) {
     let eyesTraitValue = eyesTraitTitle.split(" ").join("-");
     if (
@@ -41,10 +46,25 @@ let typeChange = function () {
         "background-image",
         "url('layers/eyes/" + eyesTraitValue + "-" + duckieType + ".png')"
       );
+
+    if (eyesTraitValue.match(/^(Wink|Closed-Eyes)$/)) {
+      let eyes =
+        duckieType === "Alien"
+          ? eyesTraitValue + "-" + duckieType
+          : eyesTraitValue;
+
+      $(".duckie-eyes").css(
+        "background-image",
+        "url('layers/eyes/" + eyes + ".png')"
+      );
+    }
   }
+
   let headTraitTitle = $("#head-btns").children(".selected").attr("title");
+
   if (headTraitTitle) {
     let headTraitValue = headTraitTitle.split(" ").join("-");
+
     if (headTraitValue.match(/^(Shower-Cap)$/))
       $(".duckie-head").css(
         "background-image",
@@ -92,7 +112,8 @@ $(document).on("click", ".btn-icon", function () {
     if (
       traitValue.match(
         /^(Pilot-Sunglasses|Reading-Glasses|Black-Eye|Third-Eye|Diving-Mask|Power-Level-Meter|Shower-Cap)$/
-      )
+      ) ||
+      (duckieType === "Alien" && traitValue.match(/^(Wink|Closed-Eyes)$/))
     )
       $(".duckie-" + traitType).css(
         "background-image",
