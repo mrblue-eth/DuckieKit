@@ -155,18 +155,18 @@
   }
 
   .duckie-type {
-    left: 33.5px;
+    left: 0px;
   }
 
   .duckie-mug {
     bottom: 0px;
-    right: 75px;
+    right: 40px;
     width: 83.5px;
     height: 125px;
   }
   .duckie-gm {
     top: 25px;
-    right: 75px;
+    right: 40px;
     width: 91.5px;
     height: 66.5px;
   }
