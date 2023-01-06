@@ -1,0 +1,173 @@
+.settings {
+  width: 60rem;
+}
+
+.settings-title {
+  text-align: center;
+  border-bottom: 0.5rem solid #eee;
+  margin-bottom: 1rem;
+}
+
+.settings-title h2 {
+  width: fit-content;
+  font-size: 1.25rem;
+  padding: 1rem;
+  margin-bottom: -1.75rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #222;
+}
+
+.number-input {
+  background: none;
+  border: 0.5rem solid #eee;
+  font-family: inherit;
+  color: inherit;
+  font-size: 2rem;
+  padding: 1rem;
+  width: 15rem;
+  height: 5rem;
+  text-align: center;
+  float: left;
+  margin-top: 1rem;
+}
+
+.btn-show {
+  border: none;
+  background-color: #eee;
+  color: #222;
+  font-size: 2rem;
+  font-family: inherit;
+  padding: 1rem;
+  cursor: pointer;
+  height: 5rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  float: left;
+}
+
+.btn-show:hover {
+  background-color: #ccc;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  color: #222;
+  font-size: 2rem;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+  width: 6.5rem;
+  height: 6.5rem;
+  border: transparent 0.25rem solid;
+  opacity: 75%;
+}
+.btn.selected {
+  border-color: #f7d60d;
+  opacity: 100%;
+}
+.btn:hover {
+  opacity: 100%;
+}
+
+.btn-mug img {
+  width: 4rem;
+  height: 6rem;
+  image-rendering: pixelated;
+}
+.btn-gm img {
+  width: 4.4rem;
+  height: 3.2rem;
+  image-rendering: pixelated;
+}
+.disable {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.hidden {
+  display: none;
+}
+.accordion {
+  cursor: pointer;
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease-out;
+}
+
+.duckie-background {
+  position: relative;
+  width: 600px;
+  height: 337.5px;
+  margin: 2rem auto;
+  outline: 0.5rem solid #eee;
+  background-size: contain;
+  image-rendering: pixelated;
+}
+.duckie-layers {
+  width: 600px;
+  height: 337.5px;
+  position: absolute;
+  background-size: contain;
+  image-rendering: pixelated;
+  background-repeat: no-repeat;
+}
+
+.duckie-type {
+  left: 50px;
+}
+
+.duckie-mug {
+  bottom: 0px;
+  right: 112.5px;
+  width: 125px;
+  height: 187.5px;
+}
+.duckie-gm {
+  top: 37.5px;
+  right: 112.5px;
+  width: 137.5px;
+  height: 100px;
+}
+
+@media screen and (max-width: 880px) {
+  .settings {
+    max-width: 100%;
+  }
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .duckie-background {
+    width: 360px;
+    height: 225px;
+  }
+  .duckie-layers {
+    width: 360px;
+    height: 225px;
+  }
+
+  .duckie-type {
+    left: 33.5px;
+  }
+
+  .duckie-mug {
+    bottom: 0px;
+    right: 75px;
+    width: 83.5px;
+    height: 125px;
+  }
+  .duckie-gm {
+    top: 25px;
+    right: 75px;
+    width: 91.5px;
+    height: 66.5px;
+  }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta property="og:title" content="Duckie GM!" />
+
+    <meta name="description" content="Create your custom duckie gm!" />
+    <meta property="og:description" content="Create your custom duckie gm!" />
+
+    <meta
+      property="og:image"
+      content="https://mrblue-eth.github.io/DuckieKit/meta_gm.png"
+    />
+    <meta
+      property="og:url"
+      content="https://mrblue-eth.github.io/DuckieKit/gm.html"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="gm.css" />
+    <title>Duckie GM!</title>
+  </head>
+  <body>
+    <header>
+      <h1>Duckie GM!</h1>
+    </header>
+    <main>
+      <section class="settings flex flex-col">
+        <div class="settings-title">
+          <h2>Duckie</h2>
+        </div>
+        <div id="type-btns" class="flex flex-wrap">
+          <input
+            type="number"
+            class="number-input"
+            name="duckie-id"
+            min="1"
+            max="5000"
+            placeholder="#ID"
+          />
+          <button class="btn-show">show!</button>
+        </div>
+
+        <div class="settings-title accordion">
+          <h2>Mug <span>+</span></h2>
+        </div>
+        <div id="mug-btns" class="flex flex-wrap panel">
+          <button class="btn btn-mug" title="Small Mug Red">
+            <img src="layers/mug/Small-Mug-Red.png" />
+          </button>
+          <button class="btn btn-mug" title="Small Mug Blue">
+            <img src="layers/mug/Small-Mug-Blue.png" />
+          </button>
+          <button class="btn btn-mug" title="Small Mug Yellow">
+            <img src="layers/mug/Small-Mug-Yellow.png" />
+          </button>
+          <button class="btn btn-mug" title="Small Mug Green">
+            <img src="layers/mug/Small-Mug-Green.png" />
+          </button>
+          <button class="btn btn-mug" title="Small Mug Grey">
+            <img src="layers/mug/Small-Mug-Grey.png" />
+          </button>
+          <button class="btn btn-mug" title="Small Mug White">
+            <img src="layers/mug/Small-Mug-White.png" />
+          </button>
+          <button class="btn btn-mug" title="Big Mug Red">
+            <img src="layers/mug/Big-Mug-Red.png" />
+          </button>
+          <button class="btn btn-mug" title="Big Mug Blue">
+            <img src="layers/mug/Big-Mug-Blue.png" />
+          </button>
+          <button class="btn btn-mug" title="Big Mug Yellow">
+            <img src="layers/mug/Big-Mug-Yellow.png" />
+          </button>
+          <button class="btn btn-mug" title="Big Mug Green">
+            <img src="layers/mug/Big-Mug-Green.png" />
+          </button>
+          <button class="btn btn-mug" title="Big Mug Grey">
+            <img src="layers/mug/Big-Mug-Grey.png" />
+          </button>
+          <button class="btn btn-mug" title="Big Mug White">
+            <img src="layers/mug/Big-Mug-White.png" />
+          </button>
+        </div>
+
+        <div class="settings-title accordion">
+          <h2>GM <span>+</span></h2>
+        </div>
+        <div id="gm-btns" class="flex flex-wrap panel">
+          <button class="btn btn-gm" title="Big Gm 1">
+            <img src="layers/gm/Big-Gm-1.png" />
+          </button>
+          <button class="btn btn-gm" title="Big Gm 2">
+            <img src="layers/gm/Big-Gm-2.png" />
+          </button>
+          <button class="btn btn-gm" title="Small Gm">
+            <img src="layers/gm/Small-Gm.png" />
+          </button>
+        </div>
+      </section>
+      <section class="result flex">
+        <div id="duckie-image" class="duckie-background">
+          <div class="duckie-layers duckie-type">
+            <div class="duckie-layers duckie-face">
+              <div class="duckie-layers duckie-body">
+                <div class="duckie-layers duckie-beak">
+                  <div class="duckie-layers duckie-eyes">
+                    <div class="duckie-layers duckie-head">
+                      <div class="duckie-layers duckie-mug"></div>
+                      <div class="duckie-layers duckie-gm"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer><p>Designed by mrblue.eth</p></footer>
+    <script src="jquery.min.js"></script>
+    <script src="gm.js"></script>
+  </body>
+</html>

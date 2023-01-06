@@ -42,6 +42,7 @@
 .btn img {
   width: 4.75rem;
   height: 4.75rem;
+  image-rendering: pixelated;
 }
 
 .bg-blue {

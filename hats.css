@@ -48,17 +48,20 @@
   padding-top: 1rem;
   width: 6rem;
   height: 6rem;
+  image-rendering: pixelated;
 }
 
 .mcdonalds img {
   padding-top: 1rem;
   width: 7rem;
   height: 7rem;
+  image-rendering: pixelated;
 }
 
 .btn-default-hat img {
   width: 5rem;
   height: 5rem;
+  image-rendering: pixelated;
 }
 .disable {
   cursor: not-allowed;

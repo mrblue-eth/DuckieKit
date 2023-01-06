@@ -43,6 +43,7 @@ let removeDuckie = function () {
 
 let showDuckie = function () {
   let duckieID = Number($(".number-input").val());
+  if (!(duckieID > 0 && duckieID <= 5000)) duckieID = 1;
   removeDuckie();
 
   $.getJSON("duckies/duckie" + duckieID + ".json", function (json) {
