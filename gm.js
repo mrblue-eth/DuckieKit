@@ -3,7 +3,7 @@
 let defaultDuck = {
   background: "url('layers/background/Blue.png')",
   type: "url('layers/type/Yellow.png')",
-  mug: "url('layers/mug/Small-Mug-Red.png')",
+  mug: "url('layers/mug/Small-Mug-Yellow.png')",
   gm: "url('layers/gm/Big-Gm-1.png')",
 };
 
@@ -128,8 +128,35 @@ $(".btn-show").click(function () {
 });
 
 $(".number-input").keypress(function (e) {
-  var key = e.which;
+  let key = e.which;
   if (key == 13)
     // the enter key code
     showDuckie();
+});
+
+$("body").keyup(function (e) {
+  let key_code = e.which || e.keyCode;
+  console.log($(".duckie-mug").css("right"));
+  let mugRight = parseInt($(".duckie-mug").css("right"), 10);
+  let mugHeight = parseInt($(".duckie-mug").css("height"), 10);
+  switch (key_code) {
+    case 37: //left arrow key
+      if (
+        (mugRight < 200 && mugHeight > 150) ||
+        (mugRight < 90 && mugHeight < 150)
+      ) {
+        $(".duckie-mug").animate({ right: "+=10px" });
+        $(".duckie-gm").animate({ right: "+=10px" });
+      }
+      break;
+    case 39: //right arrow key
+      if (
+        (mugRight > 60 && mugHeight > 150) ||
+        (mugRight > 0 && mugHeight < 150)
+      ) {
+        $(".duckie-mug").animate({ right: "-=10px" });
+        $(".duckie-gm").animate({ right: "-=10px" });
+      }
+      break;
+  }
 });
