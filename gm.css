@@ -32,7 +32,7 @@
   margin-top: 1rem;
 }
 
-.btn-show {
+.btn-icon {
   border: none;
   background-color: #eee;
   color: #222;
@@ -46,7 +46,7 @@
   float: left;
 }
 
-.btn-show:hover {
+.btn-icon:hover {
   background-color: #ccc;
 }
 
@@ -71,6 +71,11 @@
   opacity: 100%;
 }
 
+.btn-arrow img {
+  width: 4rem;
+  height: 4rem;
+  image-rendering: pixelated;
+}
 .btn-mug img {
   width: 4rem;
   height: 6rem;
@@ -107,6 +112,7 @@
   outline: 0.5rem solid #eee;
   background-size: contain;
   image-rendering: pixelated;
+  overflow-x: hidden;
 }
 .duckie-layers {
   width: 600px;
@@ -145,6 +151,18 @@
 }
 
 @media screen and (max-width: 650px) {
+  .number-input {
+    font-size: 1.5rem;
+    width: 12rem;
+    height: 4rem;
+  }
+  .btn-icon {
+    height: 4rem;
+  }
+  .btn-icon img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
   .duckie-background {
     width: 360px;
     height: 225px;
