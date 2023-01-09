@@ -1,0 +1,55 @@
+header {
+  height: 15rem;
+  border-bottom: 0.5rem solid #eee;
+}
+main {
+  min-height: 25rem;
+  margin-top: 10rem;
+  font-size: 2rem;
+  row-gap: 5rem;
+  align-items: center;
+}
+
+.header-duckies {
+  position: absolute;
+  top: 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.header-duckie {
+  background: #eee;
+  color: #333;
+  width: 12rem;
+  height: 12rem;
+  padding: 0.5rem;
+}
+
+.header-duckie img {
+  width: 11rem;
+  height: 11rem;
+}
+@media screen and (max-width: 650px) {
+  header {
+    height: 10rem;
+  }
+  .header-duckies {
+    top: 7rem;
+  }
+
+  .header-duckie {
+    width: 6rem;
+    height: 6rem;
+  }
+  .header-duckie img {
+    width: 5rem;
+    height: 5rem;
+  }
+  main a {
+    font-size: 1.5rem;
+  }
+}
