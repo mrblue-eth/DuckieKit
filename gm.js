@@ -173,3 +173,70 @@ $(".btn-right").click(function () {
 $(".btn-left").click(function () {
   moveMug2Left(10);
 });
+
+$(".btn-download").click(function () {
+  let canvas = document.createElement("canvas");
+  canvas.width = 1200;
+  canvas.height = 675;
+  let context = canvas.getContext("2d");
+  context.imageSmoothingEnabled = false;
+
+  let backgroundImage = new Image();
+  backgroundImage.src = $("#duckie-image").css("background-image").slice(5, -2);
+  context.drawImage(backgroundImage, 0, 0, 1200, 675);
+
+  let duckieTypeImage = new Image();
+  duckieTypeImage.src = $(".duckie-type").css("background-image").slice(5, -2);
+  context.drawImage(duckieTypeImage, 100, 0, 675, 675);
+
+  let duckieFaceImage = new Image();
+  duckieFaceImage.src = $(".duckie-face").css("background-image").slice(5, -2);
+  context.drawImage(duckieFaceImage, 100, 0, 675, 675);
+
+  let duckieBodyImage = new Image();
+  duckieBodyImage.src = $(".duckie-body").css("background-image").slice(5, -2);
+  context.drawImage(duckieBodyImage, 100, 0, 675, 675);
+
+  let duckieBeakImage = new Image();
+  duckieBeakImage.src = $(".duckie-beak").css("background-image").slice(5, -2);
+  context.drawImage(duckieBeakImage, 100, 0, 675, 675);
+
+  let duckieEyesImage = new Image();
+  duckieEyesImage.src = $(".duckie-eyes").css("background-image").slice(5, -2);
+  context.drawImage(duckieEyesImage, 100, 0, 675, 675);
+
+  let duckieHeadImage = new Image();
+  duckieHeadImage.src = $(".duckie-head").css("background-image").slice(5, -2);
+  context.drawImage(duckieHeadImage, 100, 0, 675, 675);
+
+  let duckieGmImage = new Image();
+  duckieGmImage.src = $(".duckie-gm").css("background-image").slice(5, -2);
+
+  let duckieMugImage = new Image();
+  duckieMugImage.src = $(".duckie-mug").css("background-image").slice(5, -2);
+
+  let scale = 2;
+
+  if (screen.width < 650) scale = 3.05;
+
+  context.drawImage(
+    duckieGmImage,
+    parseInt($(".duckie-gm").css("left"), 10) * scale + 100,
+    75,
+    275,
+    200
+  );
+
+  context.drawImage(
+    duckieMugImage,
+    parseInt($(".duckie-mug").css("left"), 10) * scale + 100,
+    300,
+    250,
+    375
+  );
+
+  let a = document.createElement("a");
+  a.href = canvas.toDataURL("image/png");
+  a.download = "duckie.png";
+  a.click();
+});
