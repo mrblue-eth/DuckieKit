@@ -39,7 +39,7 @@ let typeChange = function () {
     let eyesTraitValue = eyesTraitTitle.split(" ").join("-");
     if (
       eyesTraitValue.match(
-        /^(Pilot-Sunglasses|Reading-Glasses|Black-Eye|Third-Eye|Diving-Mask|Power-Level-Meter)$/
+        /^(Pilot-Sunglasses|Reading-Glasses|Black-Eye|Third-Eye|Diving-Mask)$/
       )
     )
       $(".duckie-eyes").css(
@@ -111,7 +111,7 @@ $(document).on("click", ".btn-icon", function () {
 
     if (
       traitValue.match(
-        /^(Pilot-Sunglasses|Reading-Glasses|Black-Eye|Third-Eye|Diving-Mask|Power-Level-Meter|Shower-Cap)$/
+        /^(Pilot-Sunglasses|Reading-Glasses|Black-Eye|Third-Eye|Diving-Mask|Shower-Cap)$/
       ) ||
       (duckieType === "Alien" && traitValue.match(/^(Wink|Closed-Eyes)$/))
     )

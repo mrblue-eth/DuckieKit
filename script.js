@@ -64,7 +64,7 @@ let showDuckie = function () {
 
       if (
         traitValue.match(
-          /^(Pilot-Sunglasses|Reading-Glasses|Black-Eye|Third-Eye|Diving-Mask|Power-Level-Meter|Shower-Cap)$/
+          /^(Pilot-Sunglasses|Reading-Glasses|Black-Eye|Third-Eye|Diving-Mask|Shower-Cap)$/
         )
       )
         $(".duckie-" + traitType).css(
