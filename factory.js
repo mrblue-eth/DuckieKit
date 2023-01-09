@@ -129,3 +129,43 @@ $(document).on("click", ".btn-icon", function () {
 
   if (traitType === "type") typeChange();
 });
+
+$(".btn-download").click(function () {
+  let canvas = document.createElement("canvas");
+  canvas.width = canvas.height = 960;
+  let context = canvas.getContext("2d");
+  context.imageSmoothingEnabled = false;
+
+  let backgroundImage = new Image();
+  backgroundImage.src = $("#duckie-image").css("background-image").slice(5, -2);
+  context.drawImage(backgroundImage, 0, 0, 960, 960);
+
+  let duckieTypeImage = new Image();
+  duckieTypeImage.src = $(".duckie-type").css("background-image").slice(5, -2);
+  context.drawImage(duckieTypeImage, 0, 0, 960, 960);
+
+  let duckieFaceImage = new Image();
+  duckieFaceImage.src = $(".duckie-face").css("background-image").slice(5, -2);
+  context.drawImage(duckieFaceImage, 0, 0, 960, 960);
+
+  let duckieBodyImage = new Image();
+  duckieBodyImage.src = $(".duckie-body").css("background-image").slice(5, -2);
+  context.drawImage(duckieBodyImage, 0, 0, 960, 960);
+
+  let duckieBeakImage = new Image();
+  duckieBeakImage.src = $(".duckie-beak").css("background-image").slice(5, -2);
+  context.drawImage(duckieBeakImage, 0, 0, 960, 960);
+
+  let duckieEyesImage = new Image();
+  duckieEyesImage.src = $(".duckie-eyes").css("background-image").slice(5, -2);
+  context.drawImage(duckieEyesImage, 0, 0, 960, 960);
+
+  let duckieHeadImage = new Image();
+  duckieHeadImage.src = $(".duckie-head").css("background-image").slice(5, -2);
+  context.drawImage(duckieHeadImage, 0, 0, 960, 960);
+
+  let a = document.createElement("a");
+  a.href = canvas.toDataURL("image/png");
+  a.download = "duckie.png";
+  a.click();
+});

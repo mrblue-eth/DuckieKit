@@ -79,6 +79,15 @@ footer p {
   justify-content: center;
   align-items: center;
 }
+
+.disable {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.hidden {
+  display: none;
+}
+
 @media screen and (max-width: 650px) {
   h1 {
     font-size: 2rem;

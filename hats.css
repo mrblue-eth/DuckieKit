@@ -2,13 +2,6 @@
   margin: 0 auto;
 }
 
-.result {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-}
-
 .number-input {
   background: none;
   border: 0.5rem solid #eee;
@@ -62,13 +55,6 @@
   width: 5rem;
   height: 5rem;
   image-rendering: pixelated;
-}
-.disable {
-  cursor: not-allowed;
-  pointer-events: none;
-}
-.hidden {
-  display: none;
 }
 
 .duckie-background {

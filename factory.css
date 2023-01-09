@@ -18,6 +18,10 @@
   background-color: #222;
 }
 
+.result {
+  justify-content: flex-start;
+}
+
 .btn {
   border: none;
   background-color: transparent;
@@ -31,6 +35,7 @@
   border: transparent 0.25rem solid;
   opacity: 75%;
 }
+
 .btn.selected {
   border-color: #f7d60d;
   opacity: 100%;
@@ -39,6 +44,18 @@
   opacity: 100%;
 }
 
+.btn-download {
+  background-color: #eee;
+  color: #222;
+  width: fit-content;
+  padding: 1rem;
+  cursor: pointer;
+  height: 5rem;
+  opacity: 100%;
+}
+.btn-download:hover {
+  background-color: #ccc;
+}
 .btn img {
   width: 4.75rem;
   height: 4.75rem;
