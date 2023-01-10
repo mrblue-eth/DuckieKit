@@ -1,30 +1,27 @@
 "use strict";
 
 let defaultDuck = {
-  background: "url('layers/background/Blue.png')",
-  type: "url('layers/type/Yellow.png')",
+  background: "url('data/layers/background/Purple.png')",
+  type: "url('data/layers/type/Yellow.png')",
 };
 
 let resetDuckie = function () {
   $("#background-btns")
     .children(".btn-icon")
-    .not(".bg-blue")
+    .not(":first")
     .removeClass("selected");
 
-  $("#background-btns").children(".bg-blue").addClass("selected");
+  $("#background-btns").children(":first").addClass("selected");
 
   $(".duckie-background").css("background-image", defaultDuck.background);
 
   $(".duckie-layers").each(function (index, element) {
-    $(element).css("background-image", "");
+    $(element).css("background-image", "none");
   });
 
-  $("#type-btns")
-    .children(".btn-icon")
-    .not(".type-yellow")
-    .removeClass("selected");
+  $("#type-btns").children(".btn-icon").not(":first").removeClass("selected");
 
-  $("#type-btns").children(".type-yellow").addClass("selected");
+  $("#type-btns").children(":first").addClass("selected");
 
   $(".duckie-type").css("background-image", defaultDuck.type);
 };
@@ -44,7 +41,7 @@ let typeChange = function () {
     )
       $(".duckie-eyes").css(
         "background-image",
-        "url('layers/eyes/" + eyesTraitValue + "-" + duckieType + ".png')"
+        "url('data/layers/eyes/" + eyesTraitValue + "-" + duckieType + ".png')"
       );
 
     if (eyesTraitValue.match(/^(Wink|Closed-Eyes)$/)) {
@@ -55,7 +52,7 @@ let typeChange = function () {
 
       $(".duckie-eyes").css(
         "background-image",
-        "url('layers/eyes/" + eyes + ".png')"
+        "url('data/layers/eyes/" + eyes + ".png')"
       );
     }
   }
@@ -68,7 +65,7 @@ let typeChange = function () {
     if (headTraitValue.match(/^(Shower-Cap)$/))
       $(".duckie-head").css(
         "background-image",
-        "url('layers/head/" + headTraitValue + "-" + duckieType + ".png')"
+        "url('data/layers/head/" + headTraitValue + "-" + duckieType + ".png')"
       );
   }
 };
@@ -106,7 +103,7 @@ $(document).on("click", ".btn-icon", function () {
   } else {
     $(".duckie-" + traitType).css(
       "background-image",
-      "url('layers/" + traitType + "/" + traitValue + ".png')"
+      "url('data/layers/" + traitType + "/" + traitValue + ".png')"
     );
 
     if (
@@ -117,7 +114,7 @@ $(document).on("click", ".btn-icon", function () {
     )
       $(".duckie-" + traitType).css(
         "background-image",
-        "url('layers/" +
+        "url('data/layers/" +
           traitType +
           "/" +
           traitValue +
