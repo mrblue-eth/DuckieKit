@@ -18,6 +18,7 @@ body {
 }
 a {
   text-decoration: none;
+  color: #eee;
 }
 a:hover {
   color: #f7d60d;
