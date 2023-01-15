@@ -9,7 +9,7 @@ let removeDuckie = function () {
   $(".duckie-layers").each(function (index, element) {
     $(element).css("background-image", "none");
   });
-  $(".btn-download").addClass("hidden");
+  $("#downloadbutton").addClass("hidden");
 };
 
 let showDuckie = function () {
@@ -19,6 +19,7 @@ let showDuckie = function () {
 
   $.getJSON("data/duckies/duckie" + duckieID + ".json", function (json) {
     $(".btn").removeClass("disable");
+    $("#extrahats").children(".btn-extrahat").removeClass("selected");
 
     let duckieType = json.traits.find((o) => o.trait_type === "Type").value;
 
@@ -49,7 +50,7 @@ let showDuckie = function () {
 
       if (traitType === "head") {
         defaultHeadtrait = traitValue;
-        $(".btn-default-hat").removeClass("hidden");
+        $(".btn-default-hat").removeClass("hidden").addClass("selected");
         $(".btn-default-hat img").attr(
           "src",
           "data/layers/head/" + traitValue + ".png"
@@ -58,12 +59,12 @@ let showDuckie = function () {
     });
 
     setTimeout(() => {
-      $(".btn-download").removeClass("hidden");
+      $("#downloadbutton").removeClass("hidden");
     }, 250);
   });
 };
 
-$(".show").click(function () {
+$("#showbutton").click(function () {
   showDuckie();
 });
 
@@ -74,30 +75,25 @@ $(".number-input").keypress(function (e) {
     showDuckie();
 });
 
-$(".xmas1").click(function () {
-  if ($(".duckie-head-extra").css("background-image").includes("xmas-hat-1"))
-    $(".duckie-head-extra").css("background-image", "none");
-  else
-    $(".duckie-head-extra").css(
-      "background-image",
-      "url('data/layers/head/xmas-hat-1.png')"
-    );
-});
+$(document).on("click", ".btn-extrahat", function () {
+  let parent = $(this).parent();
+  parent.children(".btn-extrahat").not(this).removeClass("selected");
+  $(this).toggleClass("selected");
 
-$(".mcdonalds").click(function () {
-  if ($(".duckie-head-extra").css("background-image").includes("mcdonalds-hat"))
+  let traitValue = $(this).attr("title").split(" ").join("-");
+
+  if (!$(this).hasClass("selected"))
     $(".duckie-head-extra").css("background-image", "none");
   else
     $(".duckie-head-extra").css(
       "background-image",
-      "url('data/layers/head/mcdonalds-hat.png')"
+      "url('data/layers/head/" + traitValue + ".png')"
     );
 });
 
 $(".btn-default-hat").click(function () {
-  let headTraitSrc = $(".duckie-head").css("background-image");
-  let headTrait = headTraitSrc.slice(headTraitSrc.lastIndexOf("/") + 1, -6);
-  if (headTrait === defaultHeadtrait)
+  $(this).toggleClass("selected");
+  if (!$(this).hasClass("selected"))
     $(".duckie-head").css("background-image", "none");
   else
     $(".duckie-head").css(
@@ -106,7 +102,7 @@ $(".btn-default-hat").click(function () {
     );
 });
 
-$(".btn-download").click(function () {
+$("#downloadbutton").click(function () {
   let canvas = document.createElement("canvas");
   canvas.width = canvas.height = 960;
   let context = canvas.getContext("2d");

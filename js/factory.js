@@ -127,7 +127,7 @@ $(document).on("click", ".btn-icon", function () {
   if (traitType === "type") typeChange();
 });
 
-$(".btn-download").click(function () {
+$("#downloadbutton").click(function () {
   let canvas = document.createElement("canvas");
   canvas.width = canvas.height = 960;
   let context = canvas.getContext("2d");

@@ -5,8 +5,9 @@ header {
 main {
   min-height: 25rem;
   margin-top: 10rem;
+  margin-bottom: 5rem;
   font-size: 2rem;
-  row-gap: 5rem;
+  row-gap: 4rem;
   align-items: center;
 }
 

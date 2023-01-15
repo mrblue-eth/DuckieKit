@@ -5,12 +5,10 @@
   padding: 0;
   box-sizing: inherit;
 }
-
 html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
-
 body {
   font-family: "Press Start 2P", sans-serif;
   color: #eee;
@@ -24,7 +22,6 @@ a:hover {
   color: #f7d60d;
 }
 
-/* LAYOUT */
 header {
   display: flex;
   flex-direction: column;
@@ -39,21 +36,18 @@ h1 {
   margin: 0 auto;
   color: #f7d60d;
 }
-
 main {
   display: flex;
   justify-content: center;
   margin: 1rem;
   gap: 2rem;
 }
-
 footer {
   display: block;
   text-align: center;
   margin: 2rem 0;
   border-bottom: 0.5rem solid #eee;
 }
-
 footer p {
   width: fit-content;
   height: 3rem;
@@ -75,12 +69,85 @@ footer p {
 .flex-col {
   flex-direction: column;
 }
-
 .flex-center {
   justify-content: center;
   align-items: center;
 }
+.number-input {
+  background: none;
+  border: 0.5rem solid #eee;
+  font-family: inherit;
+  color: inherit;
+  font-size: 2rem;
+  width: 15rem;
+  height: 5rem;
+  text-align: center;
+}
+.btn {
+  border: none;
+  background-color: transparent;
+  color: #222;
+  font-size: 2rem;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+  width: 5rem;
+  height: 5rem;
+  border: transparent 0.25rem solid;
+  opacity: 75%;
+}
 
+.btn.selected {
+  border-color: #f7d60d;
+  opacity: 100%;
+}
+.btn:hover {
+  opacity: 100%;
+}
+
+.btn-text {
+  background-color: #eee;
+  color: #222;
+  width: fit-content !important;
+  padding: 0 1rem;
+  cursor: pointer;
+  height: 5rem;
+  opacity: 100%;
+}
+.btn-text:hover {
+  background-color: #ccc;
+}
+.btn img {
+  width: 4.5rem;
+  height: 4.5rem;
+  image-rendering: pixelated;
+}
+.bg-blue {
+  background-color: #6e7c96;
+}
+.bg-purple {
+  background-color: #908aa0;
+}
+.bg-green {
+  background-color: #6d9590;
+}
+.bg-brown {
+  background-color: #8d756b;
+}
+.bg-pink {
+  background-color: #dd949c;
+}
+.bg-orange {
+  background-color: #ca7d4e;
+}
+.accordion {
+  cursor: pointer;
+}
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease-out;
+}
 .disable {
   cursor: not-allowed;
   pointer-events: none;
@@ -88,12 +155,24 @@ footer p {
 .hidden {
   display: none;
 }
-
 @media screen and (max-width: 650px) {
   h1 {
     font-size: 2rem;
   }
   footer p {
     font-size: 1rem;
+  }
+  .number-input {
+    font-size: 1.5rem;
+    width: 12rem;
+    height: 4rem;
+  }
+  .btn {
+    width: 4rem;
+    height: 4rem;
+  }
+  .btn img {
+    width: 3.5rem;
+    height: 3.5rem;
   }
 }

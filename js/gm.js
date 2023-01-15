@@ -165,7 +165,7 @@ $(".btn-left").click(function () {
   moveMug2Left(10);
 });
 
-$(".btn-download").click(function () {
+$("#downloadbutton").click(function () {
   let canvas = document.createElement("canvas");
   canvas.width = 1200;
   canvas.height = 675;

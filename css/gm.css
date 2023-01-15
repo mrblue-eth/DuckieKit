@@ -20,101 +20,18 @@
 .result {
   justify-content: flex-start;
 }
-.number-input {
-  background: none;
-  border: 0.5rem solid #eee;
-  font-family: inherit;
-  color: inherit;
-  font-size: 2rem;
-  padding: 1rem;
-  width: 15rem;
-  height: 5rem;
-  text-align: center;
-  float: left;
-  margin-top: 1rem;
-}
 
-.btn-icon {
-  border: none;
-  background-color: #eee;
-  color: #222;
-  font-size: 2rem;
-  font-family: inherit;
-  padding: 1rem;
-  cursor: pointer;
-  height: 5rem;
-  margin-left: 1rem;
-  margin-top: 1rem;
-  float: left;
-}
-
-.btn-icon:hover {
-  background-color: #ccc;
-}
-
-.btn {
-  border: none;
-  background-color: transparent;
-  color: #222;
-  font-size: 2rem;
-  font-family: inherit;
-  padding: 0;
-  cursor: pointer;
-  width: 6.5rem;
-  height: 6.5rem;
-  border: transparent 0.25rem solid;
-  opacity: 75%;
-}
-.btn.selected {
-  border-color: #f7d60d;
-  opacity: 100%;
-}
-.btn:hover {
-  opacity: 100%;
-}
-.btn-download {
-  background-color: #eee;
-  color: #222;
-  width: fit-content;
-  padding: 1rem;
-  cursor: pointer;
-  height: 5rem;
-  opacity: 100%;
-}
-.btn-download:hover {
-  background-color: #ccc;
-}
 .btn-arrow img {
   width: 4rem;
   height: 4rem;
-  image-rendering: pixelated;
 }
 .btn-mug img {
-  width: 4rem;
-  height: 6rem;
-  image-rendering: pixelated;
+  width: 3rem;
+  height: 4.5rem;
 }
 .btn-gm img {
   width: 4.4rem;
   height: 3.2rem;
-  image-rendering: pixelated;
-}
-.disable {
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.hidden {
-  display: none;
-}
-.accordion {
-  cursor: pointer;
-}
-
-.panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.25s ease-out;
 }
 
 .duckie-background {
@@ -164,18 +81,15 @@
 }
 
 @media screen and (max-width: 650px) {
-  .number-input {
-    font-size: 1.5rem;
-    width: 12rem;
-    height: 4rem;
+  .btn-mug img {
+    width: 2.3rem;
+    height: 3.5rem;
   }
-  .btn-icon {
-    height: 4rem;
+  .btn-gm img {
+    width: 3.3rem;
+    height: 2.4rem;
   }
-  .btn-icon img {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
+
   .duckie-background {
     width: 360px;
     height: 225px;

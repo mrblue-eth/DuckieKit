@@ -68,14 +68,6 @@ let addDuckie = function () {
 
   let bestWidth = findBestWidth(initialWidth);
 
-  $(".banner")
-    .find(".duckie-layers")
-    .css("width", bestWidth + "px");
-
-  $(".banner")
-    .find(".duckie-background")
-    .css("width", duckieWidth + "px");
-
   $(templateItem.querySelector(".duckie-layers")).css(
     "width",
     bestWidth + "px"
@@ -159,6 +151,14 @@ let addDuckie = function () {
   });
 
   target.append(templateItem);
+
+  $(".banner")
+    .find(".duckie-layers")
+    .css("width", bestWidth + "px");
+
+  $(".banner")
+    .find(".duckie-background")
+    .css("width", duckieWidth + "px");
 };
 
 $(document).on("click", ".btn-icon", function () {
@@ -212,7 +212,7 @@ $(".number-input").keypress(function (e) {
   if (key_code == 13) addDuckie();
 });
 
-$(".btn-download").click(function () {
+$("#downloadbutton").click(function () {
   let canvas = document.createElement("canvas");
   canvas.width = 1500;
   canvas.height = 500;

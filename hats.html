@@ -36,7 +36,7 @@
       <span><a href="./">Home</a> > Duckie Hats!</span>
     </header>
     <main class="flex-col">
-      <section class="toolbar">
+      <section class="flex flex-center">
         <input
           type="number"
           class="number-input"
@@ -45,17 +45,27 @@
           max="5000"
           placeholder="#ID"
         />
-        <button class="btn show">show!</button>
-        <button class="btn btn-icon xmas1 disable">
-          <img src="data/layers/head/xmas-hat-1.png" />
-        </button>
-        <button class="btn btn-icon mcdonalds disable">
-          <img src="data/layers/head/mcdonalds-hat.png" />
-        </button>
-
-        <button class="btn btn-icon btn-default-hat disable hidden">
-          <img id="default-hat-img" src="" />
-        </button>
+        <button id="showbutton" class="btn btn-text">show!</button>
+        <div id="extrahats">
+          <button
+            class="btn btn-icon btn-extrahat christmas-hat disable"
+            title="Christmas Hat"
+          >
+            <img src="data/layers/head/Christmas-Hat.png" />
+          </button>
+          <button
+            class="btn btn-icon btn-extrahat mcdonalds-hat disable"
+            title="Mcdonalds Hat"
+          >
+            <img src="data/layers/head/Mcdonalds-Hat.png" />
+          </button>
+          <button
+            class="btn btn-icon btn-default-hat disable hidden"
+            title="Default Hat"
+          >
+            <img id="default-hat-img" src="" />
+          </button>
+        </div>
       </section>
       <section class="result flex flex-col flex-center">
         <div id="duckie-image" class="duckie-background">
@@ -72,7 +82,9 @@
             </div>
           </div>
         </div>
-        <button class="btn btn-download hidden">Download!</button>
+        <button id="downloadbutton" class="btn btn-text hidden">
+          Download!
+        </button>
       </section>
     </main>
     <footer><p>Designed by mrblue.eth</p></footer>
