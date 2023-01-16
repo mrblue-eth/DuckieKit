@@ -89,8 +89,6 @@ let loadDuckieFromWallet = function (walletAdr) {
   let wallet = walletAdr.trim().toLowerCase();
 
   if (!walletLoaded.includes(wallet)) {
-    walletLoaded.push(wallet);
-
     $(".btn-wallet-add").html("<img src='images/loading.gif' />");
     $(".btn").addClass("disable");
     $.getJSON("data/duckies-owner.json", function (data) {
@@ -100,10 +98,18 @@ let loadDuckieFromWallet = function (walletAdr) {
             duckie.owner.toLowerCase() === wallet ||
             (duckie.ens && duckie.ens.toLowerCase() === wallet)
         )
-        .map((duckie) => ({ id: duckie.id, isMigrated: duckie.migrated }));
+        .map((duckie) => ({
+          id: duckie.id,
+          migrated: duckie.migrated,
+          owner: duckie.owner.toLowerCase(),
+          ens: duckie.ens && duckie.ens.toLowerCase(),
+        }));
 
       $.each(duckies, function (index, val) {
-        addDuckie(val.id, val.isMigrated);
+        addDuckie(val.id, val.migrated);
+        if (!walletLoaded.includes(val.owner)) walletLoaded.push(val.owner);
+        if (val.ens && !walletLoaded.includes(val.ens))
+          walletLoaded.push(val.ens);
       });
     }).done(function () {
       $(".btn-wallet-add").html("Show");
