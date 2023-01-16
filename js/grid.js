@@ -41,11 +41,30 @@ let encodeSvg = function (svgString) {
     .replace(/\s+/g, " ");
 };
 
+let loadDuckieFromWallet = function (wallet) {
+  $(".btn-wallet-add").html("<img src='/images/loading.gif' />");
+  $(".btn").addClass("disable");
+  $.getJSON("data/duckies-owner.json", function (data) {
+    let duckieIDs = data
+      .filter(
+        (duckie) =>
+          (duckie.owner === wallet || duckie.ens === wallet) && duckie.migrated
+      )
+      .map((duckie) => duckie.id);
+
+    $.each(duckieIDs, function (key, val) {
+      addDuckie(val);
+    });
+  }).done(function () {
+    $(".btn-wallet-add").html("Show");
+    $(".btn").removeClass("disable");
+  });
+};
+
 let addDuckie = function (duckieID) {
   let item = document.createElement("div");
 
   item.classList.add("item");
-  // item.classList.add("item-" + itemSize);
   item.style.width = itemSize + "px";
   item.style.height = itemSize + "px";
 
@@ -77,18 +96,27 @@ $(document).on("click", ".item-remove", function () {
 });
 
 $(".btn-add").click(function () {
-  let duckieID = Number($(".number-input").val());
+  let duckieID = Number($("#duckieID").val());
   if (!(duckieID > 0 && duckieID <= 5000)) duckieID = 1;
   addDuckie(duckieID);
 });
 
-$(".number-input").keypress(function (e) {
+$("#duckieID").keypress(function (e) {
   let key_code = e.which || e.keyCode;
   if (key_code == 13) {
-    let duckieID = Number($(".number-input").val());
+    let duckieID = Number($(this).val());
     if (!(duckieID > 0 && duckieID <= 5000)) duckieID = 1;
     addDuckie(duckieID);
   }
+});
+
+$(".btn-wallet-add").click(function () {
+  loadDuckieFromWallet($("#walletAdr").val());
+});
+
+$("#walletAdr").keypress(function (e) {
+  let key_code = e.which || e.keyCode;
+  if (key_code == 13) loadDuckieFromWallet($(this).val());
 });
 
 $("#downloadbutton").click(function () {

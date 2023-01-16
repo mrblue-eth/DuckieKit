@@ -83,6 +83,10 @@ footer p {
   height: 5rem;
   text-align: center;
 }
+.input-large {
+  width: 34rem;
+  font-size: 1.5rem;
+}
 .btn {
   border: none;
   background-color: transparent;
@@ -166,6 +170,10 @@ footer p {
     font-size: 1.5rem;
     width: 12rem;
     height: 4rem;
+  }
+  .input-large {
+    width: 26rem;
+    font-size: 1rem;
   }
   .btn {
     width: 4rem;
