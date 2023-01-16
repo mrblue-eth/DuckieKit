@@ -10,7 +10,6 @@ let findBestWidth = function (size) {
 
 let gridSize = 6;
 let screenSize = screen.width;
-// let itemSize = findBestWidth((screenSize - 22) / 10);
 let itemSize = Math.round((screenSize - 50) / 10);
 $("#duckieGrid").width(gridSize * itemSize);
 $("#duckieGrid").css("min-height", itemSize + "px");
@@ -41,32 +40,14 @@ let encodeSvg = function (svgString) {
     .replace(/\s+/g, " ");
 };
 
-let loadDuckieFromWallet = function (wallet) {
-  $(".btn-wallet-add").html("<img src='images/loading.gif' />");
-  $(".btn").addClass("disable");
-  $.getJSON("data/duckies-owner.json", function (data) {
-    let duckieIDs = data
-      .filter(
-        (duckie) =>
-          (duckie.owner === wallet || duckie.ens === wallet) && duckie.migrated
-      )
-      .map((duckie) => duckie.id);
-
-    $.each(duckieIDs, function (key, val) {
-      addDuckie(val);
-    });
-  }).done(function () {
-    $(".btn-wallet-add").html("Show");
-    $(".btn").removeClass("disable");
-  });
-};
-
-let addDuckie = function (duckieID) {
+let addDuckie = function (duckieID, isMigrated = true) {
   let item = document.createElement("div");
 
   item.classList.add("item");
   item.style.width = itemSize + "px";
   item.style.height = itemSize + "px";
+
+  if (!isMigrated) item.classList.add("grayscale");
 
   let itemContent = document.createElement("div");
   itemContent.classList.add("item-content");
@@ -85,9 +66,31 @@ let addDuckie = function (duckieID) {
   itemRemove.innerHTML = `<i class="material-icons">&#xE5CD;</i>`;
   itemContent.append(itemRemove);
 
+  let itemID = document.createElement("div");
+  itemID.classList.add("item-id");
+  itemID.innerHTML = duckieID;
+  itemContent.append(itemID);
+
   item.append(itemContent);
 
   return grid.add([item]);
+};
+
+let loadDuckieFromWallet = function (wallet) {
+  $(".btn-wallet-add").html("<img src='images/loading.gif' />");
+  $(".btn").addClass("disable");
+  $.getJSON("data/duckies-owner.json", function (data) {
+    let duckies = data
+      .filter((duckie) => duckie.owner === wallet || duckie.ens === wallet)
+      .map((duckie) => ({ id: duckie.id, isMigrated: duckie.migrated }));
+
+    $.each(duckies, function (index, val) {
+      addDuckie(val.id, val.isMigrated);
+    });
+  }).done(function () {
+    $(".btn-wallet-add").html("Show");
+    $(".btn").removeClass("disable");
+  });
 };
 
 $(document).on("click", ".item-remove", function () {
@@ -111,12 +114,12 @@ $("#duckieID").keypress(function (e) {
 });
 
 $(".btn-wallet-add").click(function () {
-  loadDuckieFromWallet($("#walletAdr").val());
+  loadDuckieFromWallet($("#walletAdr").val().trim());
 });
 
 $("#walletAdr").keypress(function (e) {
   let key_code = e.which || e.keyCode;
-  if (key_code == 13) loadDuckieFromWallet($(this).val());
+  if (key_code == 13) loadDuckieFromWallet($(this).val().trim());
 });
 
 $("#downloadbutton").click(function () {
@@ -147,7 +150,8 @@ $("#downloadbutton").click(function () {
 
     let itemXth = itemX / itemSize;
     let itemYth = itemY / itemSize;
-
+    if ($(this).hasClass("grayscale")) context.filter = "grayscale(1)";
+    else context.filter = "grayscale(0)";
     context.drawImage(duckieSVGImage, itemXth * 240, itemYth * 240, 240, 240);
   });
   let a = document.createElement("a");

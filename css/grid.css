@@ -145,6 +145,27 @@ main {
   color: #222;
 }
 
+.item-id {
+  position: absolute;
+  color: #eee;
+  left: 1rem;
+  top: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+.item-content:hover > .item-id {
+  opacity: 1;
+}
+.grayscale {
+  filter: grayscale(1);
+}
 /* Icons in the selector */
 /* fallback */
 @font-face {
@@ -192,6 +213,11 @@ main {
     line-height: 12px;
     text-align: center;
     font-size: 10px;
+  }
+  .item-id {
+    left: 0.5rem;
+    top: 0.5rem;
+    font-size: 0.5rem;
   }
   .material-icons {
     font-size: 10px;
