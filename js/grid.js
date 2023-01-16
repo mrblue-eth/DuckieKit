@@ -42,7 +42,7 @@ let encodeSvg = function (svgString) {
 };
 
 let loadDuckieFromWallet = function (wallet) {
-  $(".btn-wallet-add").html("<img src='/images/loading.gif' />");
+  $(".btn-wallet-add").html("<img src='images/loading.gif' />");
   $(".btn").addClass("disable");
   $.getJSON("data/duckies-owner.json", function (data) {
     let duckieIDs = data
