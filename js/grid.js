@@ -40,20 +40,20 @@ let encodeSvg = function (svgString) {
     .replace(/\s+/g, " ");
 };
 
-let addDuckie = function (duckieID, isMigrated = true) {
+let addDuckie = function (duckieID) {
   let item = document.createElement("div");
 
   item.classList.add("item");
   item.style.width = itemSize + "px";
   item.style.height = itemSize + "px";
 
-  if (!isMigrated) item.classList.add("grayscale");
-
   let itemContent = document.createElement("div");
   itemContent.classList.add("item-content");
 
   $.getJSON("data/duckies/duckie" + duckieID + ".json", function (json) {
     let duckieSVG = encodeSvg(json.imageSVG.replaceAll(`\"`, `'`));
+
+    if (!json.migrated) item.classList.add("grayscale");
 
     $(itemContent).css(
       "background-image",
@@ -87,10 +87,10 @@ let loadDuckieFromWallet = function (walletAdr) {
           duckie.owner.toLowerCase() === wallet ||
           (duckie.ens && duckie.ens.toLowerCase() === wallet)
       )
-      .map((duckie) => ({ id: duckie.id, isMigrated: duckie.migrated }));
+      .map((duckie) => duckie.id);
 
-    $.each(duckies, function (index, val) {
-      addDuckie(val.id, val.isMigrated);
+    $.each(duckies, function (key, id) {
+      addDuckie(id);
     });
   }).done(function () {
     $(".btn-wallet-add").html("Show");
