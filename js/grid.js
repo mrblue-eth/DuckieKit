@@ -77,13 +77,16 @@ let addDuckie = function (duckieID, isMigrated = true) {
 };
 
 let loadDuckieFromWallet = function (walletAdr) {
-  let wallet = walletAdr.trim();
-  if (walletAdr.endsWith(".eth")) wallet = wallet.toLowerCase();
+  let wallet = walletAdr.trim().toLowerCase();
   $(".btn-wallet-add").html("<img src='images/loading.gif' />");
   $(".btn").addClass("disable");
   $.getJSON("data/duckies-owner.json", function (data) {
     let duckies = data
-      .filter((duckie) => duckie.owner === wallet || duckie.ens === wallet)
+      .filter(
+        (duckie) =>
+          duckie.owner.toLowerCase() === wallet ||
+          (duckie.ens && duckie.ens.toLowerCase() === wallet)
+      )
       .map((duckie) => ({ id: duckie.id, isMigrated: duckie.migrated }));
 
     $.each(duckies, function (index, val) {
