@@ -76,7 +76,9 @@ let addDuckie = function (duckieID, isMigrated = true) {
   return grid.add([item]);
 };
 
-let loadDuckieFromWallet = function (wallet) {
+let loadDuckieFromWallet = function (walletAdr) {
+  let wallet = walletAdr.trim();
+  if (walletAdr.endsWith(".eth")) wallet = wallet.toLowerCase();
   $(".btn-wallet-add").html("<img src='images/loading.gif' />");
   $(".btn").addClass("disable");
   $.getJSON("data/duckies-owner.json", function (data) {
@@ -114,12 +116,12 @@ $("#duckieID").keypress(function (e) {
 });
 
 $(".btn-wallet-add").click(function () {
-  loadDuckieFromWallet($("#walletAdr").val().trim());
+  loadDuckieFromWallet($("#walletAdr").val());
 });
 
 $("#walletAdr").keypress(function (e) {
   let key_code = e.which || e.keyCode;
-  if (key_code == 13) loadDuckieFromWallet($(this).val().trim());
+  if (key_code == 13) loadDuckieFromWallet($(this).val());
 });
 
 $("#downloadbutton").click(function () {
