@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta property="og:title" content="Dux Grid!" />
+
+    <meta name="description" content="Create a grid of your dux!" />
+    <meta property="og:description" content="Create a grid of your dux!" />
+
+    <meta
+      property="og:image"
+      content="https://mrblue-eth.github.io/DuckieKit/images/meta_duxgrid.png"
+    />
+    <meta
+      property="og:url"
+      content="https://mrblue-eth.github.io/DuckieKit/duxgrid.html"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@mrbluedoteth" />
+    <meta name="twitter:title" content="Dux Grid!" />
+    <meta name="twitter:description" content="Create a grid of your dux!" />
+    <meta
+      name="twitter:image"
+      content="https://mrblue-eth.github.io/DuckieKit/images/meta_duxgrid.png"
+    />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/grid.css" />
+    <title>Dux Grid!</title>
+  </head>
+  <body>
+    <header>
+      <h1>Dux Grid!</h1>
+      <span><a href="./">Home</a> > Dux Grid!</span>
+    </header>
+    <main>
+      <section class="settings flex flex-col">
+        <div class="settings-title">
+          <h2>Dux</h2>
+        </div>
+        <div class="flex flex-center">
+          <input
+            id="duckieID"
+            type="number"
+            class="number-input"
+            name="duckie-id"
+            min="1"
+            max="433"
+            placeholder="#ID"
+            title="Duckie ID"
+          />
+          <button class="btn btn-text btn-add" title="Add the duckie!">
+            Add
+          </button>
+          <div class="slider">
+            <input
+              id="gridsize"
+              type="range"
+              min="2"
+              max="10"
+              value="6"
+              title="Grid Size"
+            />
+            <p id="rangevalue">6</p>
+          </div>
+        </div>
+      </section>
+      <section class="result flex flex-col flex-center">
+        <div id="duckieGrid" class="grid"></div>
+        <button id="downloadbutton" class="btn btn-text btn-download">
+          Download!
+        </button>
+      </section>
+    </main>
+    <footer>
+      <p>
+        Designed by
+        <a href="http://mrblue.eth.limo" target="_blank">mrblue.eth</a>
+      </p>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/muuri.min.js"></script>
+    <script src="js/web-animations.min.js"></script>
+    <script src="js/duxgrid.js"></script>
+  </body>
+</html>
