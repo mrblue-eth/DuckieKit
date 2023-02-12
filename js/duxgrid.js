@@ -69,7 +69,7 @@ $(document).on("click", ".item-remove", function () {
 
 $(".btn-add").click(function () {
   let duckieID = Number($("#duckieID").val());
-  if (!(duckieID > 0 && duckieID <= 463)) duckieID = 1;
+  if (!(duckieID > 0 && duckieID <= 480)) duckieID = 1;
   addDuckie(duckieID);
 });
 
@@ -77,7 +77,7 @@ $("#duckieID").keypress(function (e) {
   let key_code = e.which || e.keyCode;
   if (key_code == 13) {
     let duckieID = Number($(this).val());
-    if (!(duckieID > 0 && duckieID <= 463)) duckieID = 1;
+    if (!(duckieID > 0 && duckieID <= 480)) duckieID = 1;
     addDuckie(duckieID);
   }
 });
